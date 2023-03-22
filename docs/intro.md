@@ -2,46 +2,16 @@
 sidebar_position: 1
 ---
 
-# Tutorial Intro
+# 介绍
 
-Let's discover **Docusaurus in less than 5 minutes**.
+本站提供免费的 Windows 全系列操作系统及 Office 套件的企业激活服务。因此，为了维持我们站点及服务器的运行和维护，请不要屏蔽本站中的广告，这是我们唯一的经济来源，感谢各位的理解。
 
-## Getting Started
+目前网络上充斥着各种 Windows 和 Office 的激活程序，这些程序中大多数都带有木马病毒，普通用户在自己不知情的情况下使用网络上的激活程序后很容易就被不怀好意的人远程控制他们的电脑。通常，这种控制手段非常隐蔽，而且是在系统底层偷偷监控用户的一举一动，这其中也包括我们的隐私数据。当我们的电脑被病毒入侵后，入侵者可能会利用我们的隐私数据售卖给第三方获得不法收入、也可能利用我们的计算机资源当做“挖矿机”实时侵占我们的网络及硬件资源，更极端的则会敲诈勒索。类似的事件前几年多有发生。
 
-Get started by **creating a new site**.
+基于以上原因，我们决定把我们内部的激活服务开放出来供大家免费使用。当然，对于有条件的朋友，我们还是建议购买正版操作系统和办公套件——尽管会花费一笔不菲的费用。
 
-Or **try Docusaurus immediately** with **[docusaurus.new](https://docusaurus.new)**.
+本站提供的激活服务是通过企业批量授权的方式实现的，整个过程不需要在电脑上安装任何程序或插件，因此能保证激活过程的安全性和可靠性。激活过程只需要电脑能连接到互联网即可，激活周期通常为 180 天，到期前操作系统或办公套件会自动续期激活天数。
 
-### What you'll need
+总的来说，通过我们的企业批量授权服务，你能享受到与正版操作系统和办公套件完全一致的使用体验。
 
-- [Node.js](https://nodejs.org/en/download/) version 16.14 or above:
-  - When installing Node.js, you are recommended to check all checkboxes related to dependencies.
-
-## Generate a new site
-
-Generate a new Docusaurus site using the **classic template**.
-
-The classic template will automatically be added to your project after you run the command:
-
-```bash
-npm init docusaurus@latest my-website classic
-```
-
-You can type this command into Command Prompt, Powershell, Terminal, or any other integrated terminal of your code editor.
-
-The command also installs all necessary dependencies you need to run Docusaurus.
-
-## Start your site
-
-Run the development server:
-
-```bash
-cd my-website
-npm run start
-```
-
-The `cd` command changes the directory you're working with. In order to work with your newly created Docusaurus site, you'll need to navigate the terminal there.
-
-The `npm run start` command builds your website locally and serves it through a development server, ready for you to view at http://localhost:3000/.
-
-Open `docs/intro.md` (this page) and edit some lines: the site **reloads automatically** and displays your changes.
+接下来，浏览左侧的导航目录，找到与你操作系统或办公套件版本一致的指南，按照指南操作吧。
