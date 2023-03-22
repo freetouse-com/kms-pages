@@ -82,6 +82,10 @@ const config = {
             label: "文档",
           },
           { to: "/blog", label: "博文", position: "left" },
+          {
+            type: "localeDropdown",
+            position: 'right'
+          },
           // {
           //   href: "https://github.com/facebook/docusaurus",
           //   label: "GitHub",
