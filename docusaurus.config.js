@@ -6,7 +6,7 @@ const darkCodeTheme = require("prism-react-renderer/themes/dracula");
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: "KMS",
+  title: "kms.hi-ruofei.com",
   tagline: "Dinosaurs are cool",
   favicon: "img/favicon.ico",
 
@@ -69,7 +69,7 @@ const config = {
       // Replace with your project's social card
       image: "img/docusaurus-social-card.jpg",
       navbar: {
-        title: "HOME",
+        // title: "首页",
         logo: {
           alt: "My Site Logo",
           src: "img/logo.svg",
@@ -79,9 +79,9 @@ const config = {
             type: "doc",
             docId: "intro",
             position: "left",
-            label: "Tutorial",
+            label: "文档",
           },
-          { to: "/blog", label: "Blog", position: "left" },
+          { to: "/blog", label: "博文", position: "left" },
           // {
           //   href: "https://github.com/facebook/docusaurus",
           //   label: "GitHub",
