@@ -1,0 +1,40 @@
+name: Deploy 2 Github Pages
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    if: github.event.repository.owner.id == github.event.sender.id
+
+    steps:
+      - name: Checkout source
+        uses: actions/checkout@v3
+        with:
+          ref: main
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: "18.x"
+
+      - name: Setup
+        env:
+          DEPLOY_KEY: ${{ secrets.KMS_DEPLOY_KEY }}
+        run: |
+          mkdir -p ~/.ssh/
+          echo "$DEPLOY_KEY" > ~/.ssh/id_rsa
+          chmod 700 ~/.ssh
+          chmod 600 ~/.ssh/id_rsa
+          ssh-keyscan github.com >> ~/.ssh/known_hosts
+          git config --global user.name "smpower"
+          git config --global user.email "rf.wangchn@foxmail.com"
+          npm install --frozen-lockfile
+          npm run build
+
+      - name: Deploy (repo - kms-pages)
+        run: |
+          npm run deploy

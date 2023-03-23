@@ -18,8 +18,10 @@ const config = {
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  // organizationName: "smpower", // Usually your GitHub org/user name.
-  // projectName: "kms.hi-ruofei.com_source", // Usually your repo name.
+  organizationName: "freetouse-project", // Usually your GitHub org/user name.
+  projectName: "kms-pages", // Usually your repo name.
+  // deploymentBranch: 'gh-pages',
+  trailingSlash: false,
 
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
