@@ -11,7 +11,7 @@ const config = {
   favicon: "img/favicon.ico",
 
   // Set the production url of your site here
-  url: "https://kms.hi-ruofei.com",
+  url: "https://kms-freetouse-project.github.io",
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: "/",
@@ -86,7 +86,7 @@ const config = {
           { to: "/blog", label: "博文", position: "left" },
           {
             type: "localeDropdown",
-            position: 'right'
+            position: "right",
           },
           // {
           //   href: "https://github.com/facebook/docusaurus",
