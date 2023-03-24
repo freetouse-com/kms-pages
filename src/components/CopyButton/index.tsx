@@ -7,12 +7,10 @@ import React, { useRef } from "react";
 import { Button, message } from "antd";
 
 interface CopyButton {
-  children: JSX.Element;
-  color: string;
   text: string;
 }
 
-const CopyButton: React.FC<CopyButton> = ({ children, color, text }) => {
+const CopyButton: React.FC<CopyButton> = ({ text }) => {
   const inputRef = useRef(null);
 
   async function handleCopyClick() {
