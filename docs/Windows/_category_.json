@@ -1,8 +1,4 @@
 {
-  "label": "Windows 激活指南",
-  "position": 2,
-  "link": {
-    "type": "generated-index",
-    "description": "这里是 Windows 全系列操作系统企业批量授权激活指南。"
-  }
+  "label": "Windows",
+  "position": 2
 }
