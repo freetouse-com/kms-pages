@@ -6,17 +6,14 @@
 import React, { useRef } from "react";
 import { Button, message } from "antd";
 
+import { copyText } from "@site/src/utils";
+
 interface CopyButton {
   text: string;
 }
 
 const CopyButton: React.FC<CopyButton> = ({ text }) => {
   const inputRef = useRef(null);
-
-  async function handleCopyClick() {
-    await navigator.clipboard.writeText(text);
-    message.success("复制成功");
-  }
 
   return (
     <>
@@ -29,7 +26,7 @@ const CopyButton: React.FC<CopyButton> = ({ text }) => {
       <Button
         type="primary"
         style={{ backgroundColor: "#25c2a0" }}
-        onClick={handleCopyClick}
+        onClick={async () => message.success(await copyText(text))}
       >
         复制秘钥
       </Button>

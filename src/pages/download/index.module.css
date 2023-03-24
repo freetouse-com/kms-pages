@@ -1,0 +1,88 @@
+/* 容器 */
+.content {
+  width: 100%;
+  max-width: 600px;
+  min-width: 375px;
+  padding: 100px 16px 0 16px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Logo */
+.content .logo {
+  width: 100%;
+  padding-left: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+/* 盒子 */
+.content .box {
+  width: 100%;
+  padding: 25px 30px;
+  border: 1px solid #babbbc;
+  border-radius: 4px;
+}
+
+/* 页面标题 */
+.content .box h1 {
+  width: 100%;
+  margin-bottom: 12px;
+  text-align: left;
+}
+
+/* 下载地址及密码 */
+.content .box ul {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 0;
+}
+
+.content .box ul li dl {
+  margin: 0;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.content .box ul li dl dd {
+  margin-left: 0;
+}
+
+/* 按钮 */
+.content .actions {
+  width: 100%;
+  margin-top: 15px;
+  padding-top: 30px;
+  border-top: 1px solid #d8d8d8;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+/* 小屏幕 */
+@media (max-width: 620px) {
+  .content .box h1 {
+    font-size: 18px;
+  }
+
+  .content .box ul li dl {
+    font-size: 15px;
+  }
+}
+
+/* 大屏幕 */
+@media (min-width: 621px) {
+  .content .box h1 {
+    font-size: 16px;
+  }
+
+  .content .box ul li dl {
+    font-size: 13px;
+  }
+}
