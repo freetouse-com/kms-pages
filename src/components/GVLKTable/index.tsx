@@ -56,8 +56,6 @@ const GVLKTable: React.FC<Props> = (props) => {
     },
   ];
 
-  console.log("type", type, dataSources[type].value);
-
   return (
     <Table
       size="middle"
