@@ -4,7 +4,7 @@
  */
 
 import React, { useRef } from "react";
-import { Button, message } from "antd";
+import { Button, Input, message } from "antd";
 
 import { copyText } from "@site/src/utils";
 
@@ -17,7 +17,7 @@ const CopyButton: React.FC<CopyButton> = ({ text }) => {
 
   return (
     <>
-      <input
+      <Input
         type="text"
         value={text}
         ref={inputRef}
