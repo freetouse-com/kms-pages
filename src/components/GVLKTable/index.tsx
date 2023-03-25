@@ -61,6 +61,8 @@ const GVLKTable: React.FC<Props> = (props) => {
   return (
     <Table
       size="middle"
+      key="version"
+      rowKey="version"
       pagination={false}
       columns={columns}
       scroll={{ x: 734 }}

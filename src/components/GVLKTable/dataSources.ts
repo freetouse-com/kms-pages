@@ -163,7 +163,7 @@ export default {
         key: "YYVX9-NTFWV-6MDM3-9PT4T-4M68B",
       },
       {
-        version: "Windows 11 企业版 G",
+        version: "Windows 10 企业版 G",
         key: "YYVX9-NTFWV-6MDM3-9PT4T-4M68B",
       },
       {
