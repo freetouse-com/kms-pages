@@ -1,8 +1,7 @@
 import React, { useState } from "react";
+import { Button, Space, message } from "antd";
 import { useLocation } from "@docusaurus/router";
 import { CheckCircleOutlined } from "@ant-design/icons";
-import { Button, ConfigProvider, Image, Space, message } from "antd";
-import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 
 import AntdConfigProvider from "../Provider/AntdConfigProvider";
 import { copyText, searchQueryToObject } from "@site/src/utils";
@@ -14,13 +13,16 @@ const DownloadPage = () => {
   const location = useLocation();
   const searchParams = searchQueryToObject(location.search);
 
-  const { siteConfig } = useDocusaurusContext();
-  const navbar: any = siteConfig.themeConfig.navbar; // TODO 将来升级后看是否有 navbar 的类型
   const [pwd] = useState("6262");
+
+  function renderTitle() {
+    if (searchParams?.uuid) return "下载中心";
+    else if (searchParams?.target) return "安全中心";
+  }
 
   return (
     <AntdConfigProvider>
-      <Layout title="下载">
+      <Layout title={renderTitle()}>
         <main className={styles.content}>
           <div className={styles.box}>
             <h1>即将离开 KMS.FreeToUse.com</h1>
