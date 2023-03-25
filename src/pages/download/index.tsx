@@ -1,4 +1,5 @@
 import React from "react";
+import { Redirect } from "@docusaurus/router";
 import { useLocation } from "@docusaurus/router";
 
 import Leave from "@site/src/components/Leave";
@@ -9,8 +10,12 @@ const DownloadPage = () => {
   const searchParams = searchQueryToObject(location.search);
 
   if (!searchParams?.uuid) {
-    window.location.href = "/";
-    return "loading...";
+    return (
+      <>
+        Loading...
+        <Redirect to="/" />
+      </>
+    );
   }
 
   return <Leave />;
