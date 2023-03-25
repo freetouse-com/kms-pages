@@ -8,7 +8,7 @@ const DownloadPage = () => {
   const location = useLocation();
   const searchParams = searchQueryToObject(location.search);
 
-  if (!searchParams?.uuid) {
+  if (!searchParams?.target) {
     window.location.href = "/";
     return "loading...";
   }
