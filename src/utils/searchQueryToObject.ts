@@ -1,6 +1,10 @@
 interface ReturnVal {
+  /** 下载文件的 uuid */
   uuid?: string;
+  /** 下载文件的目标地址 */
   target?: string;
+  /** 下载文件的访问密码 */
+  password?: string;
 }
 
 /**

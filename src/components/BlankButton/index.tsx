@@ -21,6 +21,8 @@ interface Props {
   uuid?: string;
   /** 要打开的目标链接 */
   target?: string;
+  /** 下载文件的访问密码 */
+  password?: string;
 }
 
 const BlankButton: React.FC<Props> = (props) => {
@@ -41,7 +43,7 @@ const BlankButton: React.FC<Props> = (props) => {
     switch (targetType) {
       // 如果提供了 `uuid`，使用 `/download` 下载文件
       case "download":
-        url = `/download?uuid=${uuid}`;
+        url = `/download?uuid=${uuid}&password=${props?.password || '6262'}`;
         break;
       // 如果提供了 `target`，使用 `/security` 打开目标链接
       case "security":

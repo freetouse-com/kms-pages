@@ -13,8 +13,6 @@ const DownloadPage = () => {
   const location = useLocation();
   const searchParams = searchQueryToObject(location.search);
 
-  const [pwd] = useState("6262");
-
   function renderTitle() {
     if (searchParams?.uuid) return "下载中心";
     else if (searchParams?.target) return "安全中心";
@@ -40,7 +38,7 @@ const DownloadPage = () => {
                     <dl>
                       <dt>访问密码：</dt>
                       <dd className={styles.pwd}>
-                        <span>{pwd}</span>
+                        <span>{searchParams?.password}</span>
                       </dd>
                     </dl>
                   </li>
@@ -60,7 +58,7 @@ const DownloadPage = () => {
                             style={{ color: "var(--ifm-color-primary)" }}
                           />
                         ),
-                        content: await copyText(pwd),
+                        content: await copyText(searchParams?.password),
                       })
                     }
                   >
