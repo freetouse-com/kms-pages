@@ -8,11 +8,13 @@
  */
 
 import React, { useEffect, useState } from "react";
-import { Button } from "antd";
+import { Button, ButtonProps } from "antd";
 import AntdConfigProvider from "../Provider/AntdConfigProvider";
 
 interface Props {
   children: React.ReactNode;
+  /** Antd 的 Button 组件的默认 Type 属性 */
+  type?: ButtonProps["type"];
   /** download - 下载页面 | security - 安全中心 */
   targetType: "download" | "security";
   /** 下载文件的 uuid */
@@ -59,7 +61,7 @@ const BlankButton: React.FC<Props> = (props) => {
 
   return (
     <AntdConfigProvider>
-      <Button type="primary" href={href} target="_blank">
+      <Button type={props?.type || "primary"} href={href} target="_blank">
         {children}
       </Button>
     </AntdConfigProvider>
