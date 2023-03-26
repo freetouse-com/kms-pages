@@ -8,6 +8,7 @@ const DownloadPage = () => {
   const location = useLocation();
   const searchParams = searchQueryToObject(location.search);
 
+  // Redirect to `/` if no `target` is provided
   if (!searchParams?.target) {
     return (
       <>

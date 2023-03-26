@@ -9,6 +9,7 @@ const DownloadPage = () => {
   const location = useLocation();
   const searchParams = searchQueryToObject(location.search);
 
+  // Redirect to `/` if no `uuid` is provided
   if (!searchParams?.uuid) {
     return (
       <>

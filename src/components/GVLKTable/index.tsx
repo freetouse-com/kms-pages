@@ -3,7 +3,7 @@
  */
 
 import React from "react";
-import { Table, TableColumnsType } from "antd";
+import { Table } from "antd";
 
 import CopyButton from "../CopyButton";
 import dataSources from "./dataSources";
@@ -33,7 +33,7 @@ interface Props {
 const GVLKTable: React.FC<Props> = (props) => {
   const { type } = props;
 
-  const columns: TableColumnsType = [
+  const columns = [
     {
       title: "操作系统版本 ",
       dataIndex: "version",
