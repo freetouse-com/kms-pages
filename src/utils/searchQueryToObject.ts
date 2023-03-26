@@ -1,6 +1,6 @@
 interface ReturnVal {
-  /** 下载文件的 uuid */
-  uuid?: string;
+  /** 下载文件的 id */
+  id?: string;
   /** 下载文件的目标地址 */
   target?: string;
   /** 下载文件的访问密码 */
@@ -9,7 +9,7 @@ interface ReturnVal {
 
 /**
  * 将地址栏的参数字符串转换为对象
- * @param searchQuery 地址栏参数字符串，形如：`?uuid=xxxx-xxx&target=https://www.baidu.com`
+ * @param searchQuery 地址栏参数字符串，形如：`?id=xxxx-xxx&target=https://www.baidu.com`
  * @returns {ReturnVal} 地址栏参数字符串转换成的对象
  */
 const searchQueryToObject = (searchQuery?: string): ReturnVal => {

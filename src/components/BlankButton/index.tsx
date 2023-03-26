@@ -2,7 +2,7 @@
  * @description: 新页签打开链接
  * @param {React.ReactNode} children - 按钮内容
  * @param {string} targetType - 目标类型
- * @param {string} uuid - 下载文件的 uuid
+ * @param {string} id - 下载文件的 id
  * @param {string} target - 要打开的目标链接
  * @return {React.ReactNode}
  */
@@ -17,8 +17,8 @@ interface Props {
   type?: ButtonProps["type"];
   /** download - 下载页面 | security - 安全中心 */
   targetType: "download" | "security";
-  /** 下载文件的 uuid */
-  uuid?: string;
+  /** 下载文件的 id */
+  id?: string;
   /** 要打开的目标链接 */
   target?: string;
   /** 下载文件的访问密码 */
@@ -30,20 +30,20 @@ const BlankButton: React.FC<Props> = (props) => {
 
   const [href, setHref] = useState(undefined);
 
-  // 根据 `uuid` 或 `target` 生成 `href`
+  // 根据 `id` 或 `target` 生成 `href`
   function generateHref() {
-    // 如果 `uuid` 和 `target` 都没有提供，什么也不做
-    if (!props.uuid && !props.target) {
+    // 如果 `id` 和 `target` 都没有提供，什么也不做
+    if (!props.id && !props.target) {
       return;
     }
 
-    const { uuid, target } = props;
+    const { id, target } = props;
     let url = "";
 
     switch (targetType) {
-      // 如果提供了 `uuid`，使用 `/download` 下载文件
+      // 如果提供了 `id`，使用 `/download` 下载文件
       case "download":
-        url = `/download?uuid=${uuid}&password=${props?.password || '6262'}`;
+        url = `/download?id=${id}&password=${props?.password || '6262'}`;
         break;
       // 如果提供了 `target`，使用 `/security` 打开目标链接
       case "security":

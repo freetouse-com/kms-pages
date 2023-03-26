@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { Button, Space, message } from "antd";
 import { useLocation } from "@docusaurus/router";
 import { CheckCircleOutlined } from "@ant-design/icons";
@@ -14,7 +14,7 @@ const DownloadPage = () => {
   const searchParams = searchQueryToObject(location.search);
 
   function renderTitle() {
-    if (searchParams?.uuid) return "下载中心";
+    if (searchParams?.id) return "下载中心";
     else if (searchParams?.target) return "安全中心";
   }
 
@@ -26,12 +26,12 @@ const DownloadPage = () => {
             <h1>即将离开 KMS.FreeToUse.com</h1>
             <p>您即将离开 KMS.FreeToUse.com，请注意您的帐号和财产安全。</p>
             <ul>
-              {searchParams?.uuid && (
+              {searchParams?.id && (
                 <>
                   <li>
                     <dl>
                       <dt>下载地址：</dt>
-                      <dd>https://www.baidu.com</dd>
+                      <dd>{`http://files.shareclient.net/f/${searchParams.id}`}</dd>
                     </dl>
                   </li>
                   <li>
@@ -47,7 +47,7 @@ const DownloadPage = () => {
               {searchParams?.target && <li>{searchParams.target}</li>}
             </ul>
             <Space size="small" className={styles.actions}>
-              {searchParams?.uuid && (
+              {searchParams?.id && (
                 <>
                   <Button
                     type="default"
@@ -64,7 +64,10 @@ const DownloadPage = () => {
                   >
                     复制密码
                   </Button>
-                  <Button type="primary" href="https://www.baidu.com">
+                  <Button
+                    type="primary"
+                    href={`http://files.shareclient.net/f/${searchParams.id}?p=${searchParams?.password}`}
+                  >
                     前往下载
                   </Button>
                 </>
