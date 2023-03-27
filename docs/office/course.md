@@ -7,7 +7,6 @@ link: https://learn.microsoft.com/zh-cn/deployoffice/vlactivation/activate-offic
 适用于：批量许可版本的 Office LTSC 2022、Office 2019 和 Office 2016（包括 Project 和 Visio）。
 :::
 
-
 本教程将指导你如何使用我们提供的 KMS 服务器激活 Office 套件。
 
 Office 的所有批量许可版本（包括 Project 和 Visio）都预安装了通用批量许可密钥 (GVLK)。 GVLK 支持密钥管理服务 (KMS) 激活和基于 Active Directory 的激活。在你的计算机上配置为我们提供的 kms.freetouse.com 激活服务器后，你只需要安装和启用一个 KMS 主机秘钥，即可激活 Office 的所有批量许可版本。
