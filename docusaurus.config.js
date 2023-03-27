@@ -7,7 +7,8 @@ const darkCodeTheme = require("prism-react-renderer/themes/dracula");
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: "KMS.FreeToUse.com",
-  tagline: "Dinosaurs are cool",
+  tagline:
+    "免费的 KMS 服务器——KMS.FreeToUse.com，让你的 Windows 和 Office 永久激活。",
   favicon: "img/favicon.ico",
 
   // Set the production url of your site here
@@ -76,9 +77,9 @@ const config = {
         respectPrefersColorScheme: true,
       },
       navbar: {
-        // title: "首页",
+        // title: "KMS.FreeToUse.com",
         logo: {
-          alt: "My Site Logo",
+          alt: "KMS.freeToUse.com",
           src: "img/logo.svg",
         },
         items: [
