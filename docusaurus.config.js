@@ -8,7 +8,7 @@ const darkCodeTheme = require("prism-react-renderer/themes/dracula");
 const config = {
   title: "KMS.FreeToUse.com",
   tagline:
-    "免费的 KMS 服务器——KMS.FreeToUse.com，让你的 Windows 和 Office 永久激活。",
+    "免费的 KMS 服务，永久激活你的 Windows 和 Office，让你的电脑不再受限。",
   favicon: "img/favicon.ico",
 
   // Set the production url of your site here
@@ -151,6 +151,15 @@ const config = {
         darkTheme: darkCodeTheme,
       },
     }),
+  plugins: [
+    [
+      // 本地搜索插件
+      require.resolve("docusaurus-lunr-search"),
+      {
+        languages: ["en", "de"], // language codes
+      },
+    ],
+  ],
 };
 
 module.exports = config;
