@@ -10,10 +10,15 @@ import { Descriptions, Table } from "antd";
 import dataSources from "./dataSources";
 import BlankButton from "../BlankButton";
 
-import styles from './index.module.css'
+import styles from "./index.module.css";
 
 interface Props {
-  type: "WINDOWS_11";
+  type:
+    | "WINDOWS_11"
+    | "WINDOWS_10"
+    | "WINDOWS_8.1"
+    | "WINDOWS_SERVER_2022"
+    | "WINDOWS_SERVER_2019";
 }
 
 const DownloadTable: React.FC<Props> = (props) => {
@@ -31,7 +36,11 @@ const DownloadTable: React.FC<Props> = (props) => {
       width: 80,
       render: (_: unknown, record: any) => {
         return (
-          <BlankButton id={record.id} targetType="download" target={record.file}>
+          <BlankButton
+            id={record.id}
+            targetType="download"
+            target={record.file}
+          >
             下载
           </BlankButton>
         );
@@ -49,15 +58,15 @@ const DownloadTable: React.FC<Props> = (props) => {
       pagination={false}
       columns={columns}
       dataSource={dataSource}
-      scroll={{x: 780}}
+      scroll={{ x: 780 }}
       expandable={{
         expandedRowRender: (record) => (
           <div className={styles.para}>
             <p>文件名：{record.fileName}</p>
             <p>文件大小：{record.size}</p>
-            <p>MD5：{record.md5}</p>
-            <p>SHA1：{record.sha1}</p>
-            <p>SHA256：{record.sha256}</p>
+            {record?.md5 && <p>MD5：{record.md5}</p>}
+            {record?.sha1 && <p>SHA1：{record.sha1}</p>}
+            {record?.sha256 && <p>SHA256：{record.sha256}</p>}
           </div>
         ),
         rowExpandable: (record) => record.name !== "Not Expandable",
