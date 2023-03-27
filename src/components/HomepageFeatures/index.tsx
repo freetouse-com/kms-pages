@@ -1,55 +1,63 @@
-import React from 'react';
-import clsx from 'clsx';
-import styles from './styles.module.css';
+import clsx from "clsx";
+import React from "react";
+import classnames from 'classnames'
+import Link from "@docusaurus/Link";
+
+import styles from "./styles.module.css";
 
 type FeatureItem = {
   title: string;
-  Svg: React.ComponentType<React.ComponentProps<'svg'>>;
+  Svg: React.ComponentType<React.ComponentProps<"svg">>;
   description: JSX.Element;
+  link: JSX.Element;
 };
 
 const FeatureList: FeatureItem[] = [
   {
-    title: 'Easy to Use',
-    Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
+    title: "安全解除 Windows 限制",
+    Svg: require("@site/static/img/windows.svg").default,
     description: (
       <>
-        Docusaurus was designed from the ground up to be easily installed and
-        used to get your website up and running quickly.
+        以企业批量授权方式安全的永久激活 Windows 11、Windows 10、Windows
+        8.1、Windows 8、Windows 7 和 Windows Vista 以及 Windows Server
+        2022、Windows Server 2019 和 Windows Server 2016
+        全系列系统。全面解除你的电脑限制。
       </>
+    ),
+    link: (
+      <Link className="button button--secondary button--lg" to="/docs/intro">
+        激活 Windows →
+      </Link>
     ),
   },
   {
-    title: 'Focus on What Matters',
-    Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
+    title: "安全解除 Office 限制",
+    Svg: require("@site/static/img/office.svg").default,
     description: (
       <>
-        Docusaurus lets you focus on your docs, and we&apos;ll do the chores. Go
-        ahead and move your docs into the <code>docs</code> directory.
+        以企业批量授权方式安全的永久激活批量许可版本的 Office LTSC 2022、Office
+        2019 和 Office 2016（包括 Project 和 Visio）套件。全面解除 Microsoft
+        Office 套件的使用限制。
       </>
     ),
-  },
-  {
-    title: 'Powered by React',
-    Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
-    description: (
-      <>
-        Extend or customize your website layout by reusing React. Docusaurus can
-        be extended while reusing the same header and footer.
-      </>
+    link: (
+      <Link className="button button--secondary button--lg" to="/docs/intro">
+        激活 Office →
+      </Link>
     ),
   },
 ];
 
-function Feature({title, Svg, description}: FeatureItem) {
+function Feature({ title, Svg, description,link }: FeatureItem) {
   return (
-    <div className={clsx('col col--4')}>
+    <div className={classnames(clsx("col col--6"), styles.colItem)}>
       <div className="text--center">
         <Svg className={styles.featureSvg} role="img" />
       </div>
       <div className="text--center padding-horiz--md">
         <h3>{title}</h3>
         <p>{description}</p>
+        {link}
       </div>
     </div>
   );
