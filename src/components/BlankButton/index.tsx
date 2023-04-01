@@ -1,9 +1,11 @@
 /**
  * @description: 新页签打开链接
  * @param {React.ReactNode} children - 按钮内容
+ * @param {string} type - Antd 的 Button 组件的默认 Type 属性
  * @param {string} targetType - 目标类型
  * @param {string} id - 下载文件的 id
  * @param {string} target - 要打开的目标链接
+ * @param {string} password - 下载文件的访问密码
  * @return {React.ReactNode}
  */
 
@@ -23,6 +25,8 @@ interface Props {
   target?: string;
   /** 下载文件的访问密码 */
   password?: string;
+  /** 主题 */
+  theme?: "light" | "dark";
 }
 
 const BlankButton: React.FC<Props> = (props) => {
@@ -62,7 +66,7 @@ const BlankButton: React.FC<Props> = (props) => {
   }, []);
 
   return (
-    <AntdConfigProvider>
+    <AntdConfigProvider theme={props?.theme}>
       <Button type={props?.type || "primary"} href={href} target="_blank">
         {children}
       </Button>

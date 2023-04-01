@@ -3,7 +3,7 @@
  */
 
 import React from "react";
-import { Table } from "antd";
+import { ConfigProvider, Table, theme } from "antd";
 
 import CopyButton from "../CopyButton";
 import dataSources from "./dataSources";
@@ -57,15 +57,21 @@ const GVLKTable: React.FC<Props> = (props) => {
   ];
 
   return (
-    <Table
-      size="middle"
-      key="version"
-      rowKey="version"
-      pagination={false}
-      columns={columns}
-      scroll={{ x: 734 }}
-      dataSource={dataSources[type].value}
-    />
+    <ConfigProvider
+      theme={{
+        algorithm: theme.darkAlgorithm,
+      }}
+    >
+      <Table
+        size="middle"
+        key="version"
+        rowKey="version"
+        pagination={false}
+        columns={columns}
+        scroll={{ x: 734 }}
+        dataSource={dataSources[type].value}
+      />
+    </ConfigProvider>
   );
 };
 

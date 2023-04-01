@@ -1,22 +1,24 @@
-import React from 'react'
-import { ConfigProvider } from "antd"
+import React from "react";
+import { ConfigProvider, theme } from "antd";
+
+import type { ThemeConfig } from "antd";
 
 interface Props {
+  theme?: "light" | "dark";
   children: React.ReactNode;
 }
 
 const AntdConfigProvider: React.FC<Props> = (props) => {
-  return (
-    <ConfigProvider
-      theme={{
-        token: {
-          colorPrimary: "#00b96b",
-        },
-      }}
-    >
-      {props.children}
-    </ConfigProvider>
-  );
-}
+  const antdTheme: ThemeConfig = {
+    algorithm: theme.darkAlgorithm,
+    token: {
+      colorPrimary: "#00b96b",
+    },
+  };
 
-export default AntdConfigProvider
+  if (props?.theme !== "dark") delete antdTheme.algorithm;
+
+  return <ConfigProvider theme={antdTheme}>{props.children}</ConfigProvider>;
+};
+
+export default AntdConfigProvider;

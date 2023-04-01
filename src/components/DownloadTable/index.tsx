@@ -5,10 +5,12 @@
  */
 
 import React from "react";
-import { Descriptions, Table } from "antd";
+import { ConfigProvider, Table } from "antd";
 
 import dataSources from "./dataSources";
 import BlankButton from "../BlankButton";
+
+import useTheme from "@site/src/hooks";
 
 import styles from "./index.module.css";
 
@@ -23,6 +25,8 @@ interface Props {
 
 const DownloadTable: React.FC<Props> = (props) => {
   const { type } = props;
+
+  const curTheme = useTheme();
 
   const columns = [
     {
@@ -40,6 +44,7 @@ const DownloadTable: React.FC<Props> = (props) => {
             id={record.id}
             targetType="download"
             target={record.file}
+            theme={curTheme}
           >
             下载
           </BlankButton>
@@ -51,27 +56,41 @@ const DownloadTable: React.FC<Props> = (props) => {
   const dataSource = dataSources[type].value;
 
   return (
-    <Table
-      size="small"
-      key="name"
-      rowKey="name"
-      pagination={false}
-      columns={columns}
-      dataSource={dataSource}
-      scroll={{ x: 780 }}
-      expandable={{
-        expandedRowRender: (record) => (
-          <div className={styles.para}>
-            <p>文件名：{record.fileName}</p>
-            <p>文件大小：{record.size}</p>
-            {record?.md5 && <p>MD5：{record.md5}</p>}
-            {record?.sha1 && <p>SHA1：{record.sha1}</p>}
-            {record?.sha256 && <p>SHA256：{record.sha256}</p>}
-          </div>
-        ),
-        rowExpandable: (record) => record.name !== "Not Expandable",
+    <ConfigProvider
+      theme={{
+        token:
+          curTheme === "dark"
+            ? {
+                colorBgBase: "#1b1b1d",
+                colorTextBase: "#fff",
+                colorPrimary: "#1b1b1d",
+              }
+            : {},
       }}
-    />
+    >
+      <Table
+        size="small"
+        key="name"
+        rowKey="name"
+        pagination={false}
+        columns={columns}
+        dataSource={dataSource}
+        scroll={{ x: 780 }}
+        className={styles.table}
+        expandable={{
+          expandedRowRender: (record) => (
+            <div className={styles.para}>
+              <p>文件名：{record.fileName}</p>
+              <p>文件大小：{record.size}</p>
+              {record?.md5 && <p>MD5：{record.md5}</p>}
+              {record?.sha1 && <p>SHA1：{record.sha1}</p>}
+              {record?.sha256 && <p>SHA256：{record.sha256}</p>}
+            </div>
+          ),
+          rowExpandable: (record) => record.name !== "Not Expandable",
+        }}
+      />
+    </ConfigProvider>
   );
 };
 
